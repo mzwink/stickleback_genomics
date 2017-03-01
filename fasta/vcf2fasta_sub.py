@@ -1,3 +1,6 @@
+
+#### Submission scripts for each chromosome for vcf2fasta submission    #####
+
 chr_num=["chrI","chrII","chrIII","chrIV","chrV","chrVI","chrVII","chrVIII","chrIX","chrX","chrXI","chrXII","chrXIII","chrXIV","chrXV","chrXVI","chrXVII","chrXVIII","chrXIX","chrXX","chrXXI"]
 pop = ["G2_L_jG", "Ca_L_jG", 'Lm_M_jG', 'No_L_jG', 'Ran_M_jG', 'Kob_M_jG']
 

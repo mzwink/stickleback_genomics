@@ -1,3 +1,7 @@
+############# find_seq_len ##############
+########## Input: vcf file ##############
+#Output: Length from 1st snp to last snp#
+#########################################
 
 def find_seq_len(vcf_file):
 
@@ -30,6 +34,11 @@ def find_seq_len(vcf_file):
     #print(seq_length)
     return seq_length
 
+########### Calcualte Avg Theta ###########
+#### Input: directory, populations, chr ###
+#Output: Text file of avg theta values for#
+#### for each population and chromosome ###
+###########################################
 
 def calculate_avg_theta(directory, population, chromosomes):
 

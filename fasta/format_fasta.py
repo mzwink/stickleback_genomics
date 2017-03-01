@@ -1,4 +1,7 @@
-
+########### Format fasta file ###########
+######## Input: fasta sequence ##########
+# Output: fasta seq wrapped every 60 bp #
+#########################################
 
 def format_fasta_seq(complete_sequence):
 

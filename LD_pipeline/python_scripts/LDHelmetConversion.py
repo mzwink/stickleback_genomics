@@ -22,11 +22,10 @@ def Count():
     out = str(os.environ["output"])
     with open(inp, 'r') as input, open(out, 'a') as output:
         for line in input:
-            if line.startswith(">"):#"\n":
+            if line != "\n":
                 new_line = line.strip()
                 new_line = new_line.split(".")
-                window = new_line[1] + "-" + new_line[2]
-                hotwindow.append(window)
+                hotwindow.append(new_line[2])
         no_hotspots = len(hotwindow)
         output.write("Number of Hotspots: " + str(no_hotspots) + '\n')
         for value in hotwindow:

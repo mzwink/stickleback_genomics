@@ -79,7 +79,6 @@ def downsize_LW_pop():
     fq_directories = glob.glob(directory + "LW*/")
 
     r_directory = "/lustre1/mz00685/downsize_read_cov/read_cov/"
-    #fq_directory = "/Volumes/MW_18TB/NextGen_RawData/LakeWashington_PugetSound_July2016/Run1/LW_10_134044-37980194/"
 
     LW_avg = r_directory + 'LW_avg_read_cov.txt'
     PS_avg = r_directory + 'PS_avg_read_cov.txt'
@@ -95,18 +94,11 @@ def downsize_LW_pop():
     #Will make a list of all R1 files - take same reads from paired file
     #files = 34044-10_S10_L001_R1_001.fastq, ...
 
-    downsized = [directory + "LW_10_134044-37980194/", directory + "LW_11_134044-38011105/"]
-
-    for d in downsized:
-        fq_directories.remove(d)
-
-
     for lw_dir in fq_directories:
         fq_files = glob.glob(lw_dir + "*R1*.fastq")
 
         for fq in fq_files:
             print(fq)
-
 
             #R1 file downsized
             lw_outputR1 = fq.replace(".fastq", "_ds.fastq")
@@ -126,7 +118,7 @@ def downsize_LW_pop():
             print("Number of lines in file: " + str(lw_file_len))
 
             #Change this value to choose how many reads to remove
-            per_difference = float(.45)
+            per_difference = float(.43)
             print("Percentage of reads to remove: " + str(per_difference))
             print("Number of reads to remove: " + str(int(math.ceil(lw_num_seq * per_difference))))
 

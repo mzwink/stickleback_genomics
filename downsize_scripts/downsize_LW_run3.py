@@ -127,7 +127,7 @@ def downsize_LW_pop():
             print("Number of lines in file: " + str(lw_file_len))
 
             #Change this value to choose how many reads to remove
-            per_difference = float(.45)
+            per_difference = float(.43)
             print("Percentage of reads to remove: " + str(per_difference))
             print("Number of reads to remove: " + str(int(math.ceil(lw_num_seq * per_difference))))
 

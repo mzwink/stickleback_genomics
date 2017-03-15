@@ -1,0 +1,480 @@
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 181285 out of a possible 10148826 Sites
+Run Time = 99.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrIII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 129382 out of a possible 10148826 Sites
+Run Time = 105.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrIV
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 293438 out of a possible 10148826 Sites
+Run Time = 123.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrV
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 112897 out of a possible 10148826 Sites
+Run Time = 109.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrVI
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 139989 out of a possible 10148826 Sites
+Run Time = 97.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrVII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 249379 out of a possible 10148826 Sites
+Run Time = 100.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrVIII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 166928 out of a possible 10148826 Sites
+Run Time = 100.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrIX
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 168903 out of a possible 10148826 Sites
+Run Time = 99.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrX
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 127240 out of a possible 10148826 Sites
+Run Time = 85.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXI
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 142985 out of a possible 10148826 Sites
+Run Time = 79.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 166375 out of a possible 10148826 Sites
+Run Time = 100.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXIII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 157558 out of a possible 10148826 Sites
+Run Time = 91.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXIV
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 121145 out of a possible 10148826 Sites
+Run Time = 86.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXV
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 125299 out of a possible 10148826 Sites
+Run Time = 115.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXVI
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 148756 out of a possible 10148826 Sites
+Run Time = 106.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXVII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 148731 out of a possible 10148826 Sites
+Run Time = 95.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXVIII
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 116356 out of a possible 10148826 Sites
+Run Time = 82.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXIX
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 176996 out of a possible 10148826 Sites
+Run Time = 111.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXX
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 175964 out of a possible 10148826 Sites
+Run Time = 96.00 seconds
+
+VCFtools - v0.1.12b
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf LW_jG.vcf
+	--chr chrXXI
+	--recode-INFO-all
+	--maf 0.05
+	--max-alleles 2
+	--max-maf 0.95
+	--max-meanDP 75
+	--min-alleles 2
+	--min-meanDP 10
+	--minQ 30
+	--max-missing 0.75
+	--recode
+	--remove-indels
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 117329 out of a possible 10148826 Sites
+Run Time = 96.00 seconds

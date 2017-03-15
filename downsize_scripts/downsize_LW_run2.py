@@ -76,8 +76,12 @@ def downsize_LW_pop():
     #r_directory = read_cov_directory()
     #fq_directory = lw_ps_directory()
     directory = "/lustre1/mz00685/downsize_read_cov/Run2/"
-    #fq_directories = glob.glob(directory + "LW*/")
-    fq_directories = [directory + "LW_15_134044-38576554/", directory + "LW_17_134044-38576557/", directory + "LW_4_134044-38559651/"]
+    fq_directories = glob.glob(directory + "LW*/")
+    #fq_directories = [directory + "LW_15_134044-38576554/", directory + "LW_17_134044-38576557/", directory + "LW_4_134044-38559651/"]
+    remove_directories=[directory + "LW_15_134044-38576554/", directory + "LW_17_134044-38576557/", directory + "LW_4_134044-38559651/"]
+
+    for r in remove_directories:
+        fq_directories.remove(r)
 
     print(fq_directories)
 
@@ -130,7 +134,7 @@ def downsize_LW_pop():
             print("Number of lines in file: " + str(lw_file_len))
 
             #Change this value to choose how many reads to remove
-            per_difference = float(.45)
+            per_difference = float(.43)
             print("Percentage of reads to remove: " + str(per_difference))
             print("Number of reads to remove: " + str(int(math.ceil(lw_num_seq * per_difference))))
 

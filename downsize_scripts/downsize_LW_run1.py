@@ -1,18 +1,24 @@
 import random
-import math
 import glob
+from Bio import SeqIO
 
-### Iterate remove_seqs number to remove a sequence from fq
-### Use random number generator to figure out which sequences to remove_seqs
-## Remove both seqs from paired fq files
+#################################################################################
+##### Downsize Lake Washington read coverage to match Puget Sound coverage ######
+##### Input: Diretory for Lake Washington files (On indiviudal Runs)
+##### Input: Number of reads for each individual in LW and PS populations
+#           (Format shown below)
+##### Output: Downsized fastq file (LW_#_R[1/2]_001_ds.fastq)
+#################################################################################
+########################## File = Run#_num_reads.txt : ##########################
+#       Indiv  LW        PS        Diff
+#       1      11915632  9407614   2508018
+#       2      14112430  8329780   5782650
+#       3      12456006  7064413   5391593
+#################################################################################
 
-#Input information for directories
-#Optional
-def read_cov_directory():
-    read_cov_directory = input("Enter directory with read coverage averages: ")
-    if read_cov_directory.endswith("/") == False:
-        read_cov_directory += "/"
-    return read_cov_directory
+###########  Enter directory for LW/PS Run  ################
+## Will take input path to find LW fastq files (optional) ##
+############################################################
 def lw_ps_directory():
     lw_ps_directory = input("Enter directory with LW and PS fastq files: ")
 
@@ -20,138 +26,127 @@ def lw_ps_directory():
         lw_ps_directory += "/"
     return lw_ps_directory
 
-def remove_fq_seq(lw_file_len, lw_num_seq, per_difference):
 
-    remove_seqs = int(math.ceil(lw_num_seq * per_difference))
-    remove_lines = {}
-    print(remove_seqs)
+######## Remove fastq identifiers from array  #############
+#### Input: Shuffled array of fastq identifiers ###########
+# Input: Number of reads to remove based on num_reads file#
+#### Output: New array with identifiers that will be used #
+#######   to determine reads that are copied to output ####
+###########################################################
+def remove_fq_seq(random_seq_identifier, num_reads_remove):
+    for i in range(num_reads_remove):
+        random_seq_identifier.pop(1)
 
-    for i in range(remove_seqs):
-        random_num = random.randint(0,lw_file_len)
+    return random_seq_identifier
 
-        #find a num % 4 ==0 to get beginning of seq
-        if random_num % 4 == 0:
-            continue
-        else:
-            if random_num%4 >= 3:
-                while random_num % 4 != 0:
-                     random_num += 1
+###########  Parse num_reads txt file  ###############
+########## finds number of reads to remove ###########
+##########   Input: Run#_num_reads.txt      ##########
+##########   Input: Individual number       ##########
+######################################################
+def parse_read_counts(read_info_file, indiv_pop_num):
+    num_reads = open(read_info_file).readlines()
+    indiv_pop = indiv_pop_num
 
-            elif random_num%4 <=2:
-                while random_num % 4 != 0:
-                    random_num = random_num -1
-
-        for r in range(random_num, random_num+4):
-            if r in remove_lines.keys():
-                continue
-            else:
-                remove_lines[r] = 'pos'
-    #Return dictionary of positions for easy lookup
-    print(len(remove_lines.keys()))
-    return remove_lines
-
-def parse_LW_avg(LW_avg):
-
-    lw_avg = open(LW_avg).readlines()
-    lw_read_cov = 0.0
-    for line in lw_avg:
+    remove_reads = 0
+    for line in num_reads:
         line = line.split("\t")
-        lw_read_cov += float(line[1])
 
-    #Average for all chr
-    return float(lw_read_cov)/21
+        indiv = int(line[0])
+        value = int(line[3])
+        if indiv == indiv_pop:
+            remove_reads = value
 
-def parse_PS_avg(PS_avg):
-
-    ps_avg = open(PS_avg).readlines()
-    ps_read_cov = 0.0
-    for line in ps_avg:
-        line = line.split("\t")
-        ps_read_cov += float(line[1])
-
-    return float(ps_read_cov)/21
+    return remove_reads
 
 
+##############  Downsize LW fastq files ###############
+#### Takes path to fq files and read count text file #
+#### Determines nubmer reads to remove, outputs new ##
+######## fq file with correct number of reads ########
+######################################################
 def downsize_LW_pop():
-    #r_directory = read_cov_directory()
-    #fq_directory = lw_ps_directory()
-    directory = "/lustre1/mz00685/downsize_read_cov/Run1/"
+    directory = lw_ps_directory()
+
+    # use original path
+    if len(directory) == 0:
+        directory = "/lustre1/mz00685/downsize_read_cov/Run1/"
+    remove_lines = directory + "Run1_num_reads.txt"
+
+    #find all LW directories
     fq_directories = glob.glob(directory + "LW*/")
 
-    r_directory = "/lustre1/mz00685/downsize_read_cov/read_cov/"
-
-    LW_avg = r_directory + 'LW_avg_read_cov.txt'
-    PS_avg = r_directory + 'PS_avg_read_cov.txt'
-
-    lw_avg = parse_LW_avg(LW_avg)
-    ps_avg = parse_PS_avg(PS_avg)
-    print(lw_avg)
-    print(ps_avg)
-
-    print("Parsed averages.")
-
-    #example: fq_directory = /lustre1/mz00685/downsize_read_cov/Run1/LW_10_134044-37980194/
-    #Will make a list of all R1 files - take same reads from paired file
-    #files = 34044-10_S10_L001_R1_001.fastq, ...
-
     for lw_dir in fq_directories:
-        fq_files = glob.glob(lw_dir + "*R1*.fastq")
 
-        for fq in fq_files:
-            print(fq)
+        # All lanes were combined to one fastq for each indiv
+        fq= glob.glob(lw_dir + "LW*R1_001.fastq")
 
-            #R1 file downsized
-            lw_outputR1 = fq.replace(".fastq", "_ds.fastq")
-            fq2 = fq.replace("R1", "R2")
-            #R2 file downsized
-            lw_outputR2= fq2.replace(".fastq", "_ds.fastq")
+        print(fq)
 
-            R1 = open(fq).readlines()
-            R2 = open(fq2).readlines()
-            print("Read fastq file.")
+        # Find the individual number
+        indiv = fq.split("_")[1]
+        reads_to_remove = parse_read_counts(indiv)
 
-            #Number of reads in file
-            lw_num_seq = int(len(R1) / 4)
-            lw_file_len = int(len(R1))
+        #R1 file downsized
+        lw_outputR1 = fq.replace(".fastq", "_ds.fastq")
+        fq2 = fq.replace("R1", "R2")
+        #R2 file downsized
+        lw_outputR2= fq2.replace(".fastq", "_ds.fastq")
 
-            print("Number of sequences: " + str(lw_num_seq))
-            print("Number of lines in file: " + str(lw_file_len))
+        # Open fastq paired files using biopython
+        R1 = SeqIO.parse(open(fq), 'fastq')
+        R2 = SeqIO.parse(open(fq2), 'fastq')
 
-            #Change this value to choose how many reads to remove
-            per_difference = float(.43)
-            print("Percentage of reads to remove: " + str(per_difference))
-            print("Number of reads to remove: " + str(int(math.ceil(lw_num_seq * per_difference))))
+        # Downsized output
+        output1 = open(lw_outputR1, 'w')
+        output2 = open(lw_outputR2, 'w')
 
-            #dictionary of reads to remove
-            removed_lines = remove_fq_seq(lw_file_len, lw_num_seq, per_difference)
-            print("Found lines to remove.")
+        print("Read fastq files.")
 
-            output1 = open(lw_outputR1, 'w')
-            output2 = open(lw_outputR2, 'w')
+        seq_identifier = []
 
-            #Want base 1 for removing lines
-            R1_counter = 0
-            R2_counter = 0
+        # If more PS reads than LW, don't downsize fq file
+        # Append sequence identifiers to array to randomly choose
+        # reads for output
 
-            for line in R1:
-                if R1_counter in removed_lines.keys():
-                    R1_counter += 1
-                    print("Removing line from R1 fastq.")
+        if reads_to_remove > 0:
+            for read in R1:
 
-                else:
-                    output1.write(line)
-                    R1_counter += 1
+                seq_identifier.append(str(read.id))
 
+            #shuffle array (randomize) and remove reads
+            random_seq_identifier = random.shuffle(seq_identifier)
+            output_reads = remove_fq_seq(random_seq_identifier, reads_to_remove)
 
-            for line in R2:
-                if R2_counter in removed_lines.keys():
-                    R2_counter += 1
-                    print("Removing line from R2 fastq.")
+            R1.close()
+            R2.close()
 
-                else:
-                    output2.write(line)
-                    R2_counter += 1
+            #### Reopen file to pull out the reads for output ####
 
+            R1 = SeqIO.parse(open(fq), 'fastq')
+            R2 = SeqIO.parse(open(fq2), 'fastq')
 
+            for read in R1:
+                for out in output_reads:
+                    if out == str(read.id):
+                        output1.write(read.format("fastq"))
+
+            for read in R2:
+                for out in output_reads:
+                    if out == str(read.id):
+                        output2.write(read.format("fastq"))
+
+        else:
+            for read in R1:
+                output1.write(read.format("fastq"))
+
+            for read in R2:
+                output2.write(read.format("fastq"))
+
+        R1.close()
+        R2.close()
+        output1.close()
+        output2.close()
+#################################################################################
 
 downsize_LW_pop()

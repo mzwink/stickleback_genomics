@@ -7,11 +7,8 @@ def correct_output():
     #directory = input("Enter directory of pairwise comparisons: ")
 
     #making a list of directories
-    LW_directory = "/lustre1/mz00685/LD_pipeline/LW_LW_pairwise_comp/"
-    PS_directory = "/lustre1/mz00685/LD_pipeline/LW_PS_pairwise_comp/"
-    directories = [PS_directory + "PS20_vs_LW10/orig_vcf/", PS_directory + "PS20_vs_LW10/GATK/",
-    PS_directory + "PS20_vs_LW15/orig_vcf/", PS_directory + "PS20_vs_LW15/GATK/",
-    PS_directory + "PS20_vs_LW20/orig_vcf/", PS_directory + "PS20_vs_LW20/GATK/"]
+    home_dir="/lustre1/mz00685/LD_pipeline/marine_fresh_populations/pairwise_comp/"
+    directories = [home_dir + "fresh_vs_fresh/", home_dir + "marine_vs_fresh/", home_dir + "marine_vs_marine/"]
 
     for directory in directories:
         if directory.endswith("/") == False:
@@ -24,9 +21,9 @@ def correct_output():
             file_name = file_name.split("_")
             new_output = output.replace(".txt", "_corrected.txt")
             new_output = open(new_output, 'w')
-            population1 = file_name[0] #+ "_" + file_name[1]
-            population2 = file_name[1] #+ "_" + file_name[3]
-            chrom = file_name[2]
+            population1 = file_name[0] + "_" + file_name[1]
+            population2 = file_name[2] + "_" + file_name[3]
+            chrom = file_name[4]
 
             output = open(output).readlines()
 
